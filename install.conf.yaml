@@ -1,0 +1,20 @@
+- defaults:
+    link:
+        relink: true
+
+- clean: ['~']
+
+- link:
+    '~/.dotfiles': ''
+
+- shell:
+    - [git submodule update --init --recursive, installing submodules]
+    - [mkdir -p ~/build, creating build directory]
+    - [mkdir -p ~/code, creating code directory]
+    - [mkdir -p ~/documents, creating documents directory]
+    - [mkdir -p ~/downloads, creating downloads directory]
+    - [mkdir -p ~/org, creating org directory]
+    - [mkdir -p ~/tmp, creating tmp directory]
+
+
+
