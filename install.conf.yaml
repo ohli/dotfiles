@@ -8,6 +8,7 @@
     '~/.dotfiles': ''
     '~/.tmux.conf': 'tmux.conf'
     '~/.vimrc': 'vimrc'
+    '~/.emacs.d': 'emacs'
     '~/.zshrc': 'zshrc'
 
 - shell:
