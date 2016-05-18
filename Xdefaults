@@ -18,4 +18,4 @@ URxvt.font: xft:Meslo LG S for Powerline:pixelsize=11
 ! URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=12
 ! URxvt.font: xft:Literation Mono Powerline:pixelsize=10
 URxvt*inheritPixmap: true 
-URxvt*shading: 20 
+URxvt*shading: 70 
