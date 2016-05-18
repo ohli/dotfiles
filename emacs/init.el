@@ -93,7 +93,19 @@
 ;;
 
 (global-auto-revert-mode)
-(windmove-default-keybindings)
+
+; (windmove-default-keybindings)
+
+(global-set-key (kbd "C-c <left>")  'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>")    'windmove-up)
+(global-set-key (kbd "C-c <down>")  'windmove-down)
+
+;; TODO: fix keybindings
+(global-set-key (kbd "C-x <left>") 'shrink-window-horizontally)
+(global-set-key (kbd "C-x <right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "C-x <down>") 'shrink-window)
+(global-set-key (kbd "C-x <up>") 'enlarge-window)
 
 ;;
 ;; FILES
@@ -195,6 +207,7 @@
 ;;
 
 (use-package winner
+  :disabled t
   :config (winner-mode 1))
 
 ;;
@@ -411,10 +424,7 @@
   (setq helm-ff-file-name-history-use-recentf t)
 
   ;; fuzzy matching
-  (setq helm-M-x-fuzzy-match t)
-  
-
-  )
+  (setq helm-M-x-fuzzy-match t))
 
 ;;
 ;; MAGIT
