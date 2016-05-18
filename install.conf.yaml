@@ -11,6 +11,7 @@
     '~/.emacs.d': 'emacs'
     '~/.wallpaper': 'wallpaper'
     '~/.xinitrc': 'xinitrc'
+    '~/.inputrc': 'inputrc'
     '~/.Xdefaults': 'Xdefaults'
     '~/.xsessionrc': 'xinitrc'
     '~/.zshrc': 'zshrc'
