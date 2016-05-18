@@ -14,6 +14,7 @@
     '~/.inputrc': 'inputrc'
     '~/.Xdefaults': 'Xdefaults'
     '~/.xsessionrc': 'xinitrc'
+    '~/.zshenv': 'zshenv'
     '~/.zshrc': 'zshrc'
 
 - shell:
