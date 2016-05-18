@@ -7,9 +7,10 @@ export LC_ALL="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 
-feh --bg-scale ~/.wallpaper/1.jpg &
+feh --bg-scale ~/.wallpaper/2.jpg &
 compton -b &
 urxvtd -f &
+dwmstatus &
 
 exec dwm
 
