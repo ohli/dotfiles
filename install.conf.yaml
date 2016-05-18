@@ -6,6 +6,7 @@
 
 - link:
     '~/.dotfiles': ''
+    '~/.aliases': 'aliases'
     '~/.tmux.conf': 'tmux.conf'
     '~/.vimrc': 'vimrc'
     '~/.emacs.d': 'emacs'
@@ -19,8 +20,8 @@
 
 - shell:
     - [git submodule update --init --recursive, installing submodules]
-    - [vendor/powerline-fonts/install.sh, installing powerline fonts]
-    - [vendor/nerd-fonts/install.sh, installing nerd fonts]
+#    - [vendor/powerline-fonts/install.sh, installing powerline fonts]
+#    - [vendor/nerd-fonts/install.sh, installing nerd fonts]
     - [mkdir -p ~/build, creating build directory]
     - [mkdir -p ~/code, creating code directory]
     - [mkdir -p ~/documents, creating documents directory]
