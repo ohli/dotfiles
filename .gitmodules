@@ -15,3 +15,7 @@
 	path = vendor/st
 	url = git@github.com:niko2342/st.git
 	branch = dotfiles
+[submodule "vendor/dmenu"]
+	path = vendor/dmenu
+	url = git@github.com:niko2342/dmenu.git
+	branch = dotfiles
