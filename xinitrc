@@ -13,7 +13,7 @@ xmodmap -e "keycode 100 = Super_R"
 
 feh --bg-scale ~/.wallpaper/2.jpg &
 compton -b &
-urxvtd -f &
+# urxvtd -f &
 dwmstatus &
 
 exec dwm
