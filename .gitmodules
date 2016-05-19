@@ -11,3 +11,7 @@
 	path = vendor/dwm
 	url = git@github.com:niko2342/dwm.git
 	branch = dotfiles
+[submodule "vendor/st"]
+	path = vendor/st
+	url = git@github.com:niko2342/st.git
+	branch = dotfiles
