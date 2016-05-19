@@ -34,6 +34,9 @@
                                             (abbreviate-file-name (buffer-file-name))
                                           "%b"))))
 
+(add-to-list 'default-frame-alist '(font . "Meslo LG S for Powerline-8"))
+(set-face-attribute 'default t :font "Meslo LG S for Powerline-8")
+
 (setq scroll-margin 0
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
@@ -365,7 +368,18 @@
 
 (use-package company
   :diminish company-mode
-  :init (global-company-mode 1))
+  :init (global-company-mode 1)
+  :config
+  (progn
+    (setq company-backends (delete 'company-semantic company-backends))
+    (define-key c-mode-map  [(tab)] 'company-complete)
+    (define-key c++-mode-map  [(tab)] 'company-complete))
+  (use-package company-c-headers
+    :config
+    (add-to-list 'company-backends 'company-c-headers))
+
+
+  )
 
 ;;
 ;; EXPAND REGION
@@ -386,15 +400,34 @@
   :config
   (progn
     (use-package helm-projectile
-         :config
-         (setq projectile-completion-system 'helm)
-         (helm-projectile-on))
+      :config
+      (helm-projectile-on)
+
+      (setq projectile-completion-system 'helm)
+      ; (setq projectile-indexing-method 'alien)
+
+      (setq projectile-switch-project-action 'helm-projectile)
+
+      )
+
     (projectile-global-mode)))
 
 (use-package helm-config
   :ensure helm
   :demand t
-  :bind (("C-x b" . helm-mini)
+  :bind (("C-x C-f" . helm-find-files)
+         ("C-c h o" . helm-occur)
+         ("C-c h m" . helm-man-woman)
+         ("C-c h i" . helm-semantic-or-imenu)
+         ("C-c h l" . helm-locate)
+         ("C-c h x" . helm-register)
+         ("C-c h a" . helm-apropos)
+         ("C-c h r" . helm-regexp)
+         ("C-c h g" . helm-google-suggest)
+         ("C-c h t" . helm-top)
+         ("C-c h /" . helm-find)
+         ("C-h SPC" . helm-all-mark-rings)
+         ("C-x b" . helm-mini)
          ("M-x" . helm-M-x)
          ("M-y" . helm-show-kill-ring))
   :config
@@ -424,7 +457,45 @@
   (setq helm-ff-file-name-history-use-recentf t)
 
   ;; fuzzy matching
-  (setq helm-M-x-fuzzy-match t))
+  (setq helm-completion-in-region-fuzzy-match t)
+  (setq helm-mode-fuzzy-match t)
+
+  ;; live grep
+  (when (executable-find "ack-grep")
+    (setq helm-grep-default-command "ack-grep -Hn --no-group --no-color %e %p %f")
+    (setq helm-grep-default-recurse-command "ack-grep -H --no-group --no-color %e %p %f"))
+
+  ;; helm man
+  (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
+
+  (use-package helm-descbinds
+    :config
+    (helm-descbinds-mode))
+
+  (use-package helm-gtags
+    :diminish helm-gtags-mode
+    :bind (:map helm-gtags-mode-map
+                ("C-c g a" . helm-gtags-tags-in-this-function)
+                ("C-c g s" . helm-gtags-find-symbol)
+                ("C-c g r" . helm-gtags-find-rtag)
+                ("C-j" . helm-gtags-select)
+                ("M-." . helm-gtags-dwim)
+                ("M-," . helm-gtags-pop-stack)
+                ("C-c <" . helm-gtags-previous-history)
+                ("C-c >" . helm-gtags-next-history))
+    :config
+    (progn
+      (setq helm-gtags-ignore-case t
+            helm-gtags-auto-update t
+            helm-gtags-use-input-at-cursor t
+            helm-gtags-pulse-at-cursor t
+            helm-gtags-prefix-key "\C-cg"
+            helm-gtags-suggested-key-mapping t))))
+
+(add-hook 'c-mode-hook 'helm-gtags-mode)
+(add-hook 'c++-mode-hook 'helm-gtags-mode)
+(add-hook 'java-mode-hook 'helm-gtags-mode)
+(add-hook 'asm-mode-hook 'helm-gtags-mode)
 
 ;;
 ;; MAGIT
@@ -447,3 +518,17 @@
       (window-configuration-to-register :magit-fullscreen)
       ad-do-it
         (delete-other-windows))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(safe-local-variable-values
+   (quote
+    ((company-clang-arguments "/home/nico.wagner/code/pace/")))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
