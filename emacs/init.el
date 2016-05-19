@@ -24,7 +24,16 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-(use-package monokai-theme :config (load-theme 'monokai t))
+(use-package monokai-theme
+  :config
+  (progn
+    (load-theme 'monokai t)
+    (custom-set-faces '(org-level-1 ((t (:inherit outline-1 :height 1.0))))
+                      '(org-level-2 ((t (:inherit outline-2 :height 1.0))))
+                      '(org-level-3 ((t (:inherit outline-3 :height 1.0))))
+                      '(org-level-4 ((t (:inherit outline-4 :height 1.0))))
+                      '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))))
+
 (use-package powerline :config (powerline-default-theme))
 (use-package blink-cursor :ensure f :config (blink-cursor-mode -1))
 (use-package size-indication :ensure f :config (size-indication-mode t))
@@ -531,4 +540,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(org-level-1 ((t (:inherit outline-1 :height 1.0))))
+ '(org-level-2 ((t (:inherit outline-2 :height 1.0))))
+ '(org-level-3 ((t (:inherit outline-3 :height 1.0))))
+ '(org-level-4 ((t (:inherit outline-4 :height 1.0))))
+ '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
