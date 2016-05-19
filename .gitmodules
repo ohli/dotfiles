@@ -7,3 +7,7 @@
 [submodule "vendor/nerd-fonts"]
 	path = vendor/nerd-fonts
 	url = git@github.com:ryanoasis/nerd-fonts.git
+[submodule "vendor/dwm"]
+	path = vendor/dwm
+	url = git@github.com:niko2342/dwm.git
+	branch = dotfiles
