@@ -381,8 +381,9 @@
   :config
   (progn
     (setq company-backends (delete 'company-semantic company-backends))
-    (define-key c-mode-map  [(tab)] 'company-complete)
-    (define-key c++-mode-map  [(tab)] 'company-complete))
+    ; (define-key c-mode-map  [(tab)] 'company-complete)
+    ; (define-key c++-mode-map  [(tab)] 'company-complete))
+  )
   (use-package company-c-headers
     :config
     (add-to-list 'company-backends 'company-c-headers))
