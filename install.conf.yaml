@@ -17,6 +17,7 @@
     '~/.Xdefaults': 'Xdefaults'
     '~/.xsessionrc': 'xinitrc'
     '~/.zshenv': 'zshenv'
+    '~/.zprofile': 'zprofile'
     '~/.zshrc': 'zshrc'
 
 - shell:
