@@ -14,10 +14,6 @@ else
     export PS1="%n@%m %B%~%b$ "
 fi
 
-if [[ -r /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
 # completion
 autoload -U compinit && compinit
 
@@ -43,3 +39,9 @@ setopt autocd
 
 # export TERM=xterm-256color
 export SAL_USE_VCLPLUGIN=gtk
+
+
+# zsh syntax-highlighting
+if [[ -r ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi

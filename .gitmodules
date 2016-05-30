@@ -23,3 +23,6 @@
 	path = vendor/dwmstatus
 	url = git@github.com:niko2342/dwmstatus.git
 	branch = dotfiles
+[submodule "vendor/zsh-syntax-highlighting"]
+	path = vendor/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
