@@ -57,8 +57,27 @@
 
 (use-package workgroups2
   :diminish workgroups-mode
+  :bind (("C-c w c" . wg-create-workgroup)
+         ("C-c w s" . wg-switch-to-workgroup)
+         ("C-c w r" . wg-rename-workgroup)
+         ("C-c w 0" . wg-switch-to-workgroup-at-index-0)
+         ("C-c w 1" . wg-switch-to-workgroup-at-index-1)
+         ("C-c w 2" . wg-switch-to-workgroup-at-index-2)
+         ("C-c w 3" . wg-switch-to-workgroup-at-index-3)
+         ("C-c w 4" . wg-switch-to-workgroup-at-index-4)
+         ("C-c w 5" . wg-switch-to-workgroup-at-index-5)
+         ("C-c w 6" . wg-switch-to-workgroup-at-index-6)
+         ("C-c w 7" . wg-switch-to-workgroup-at-index-7)
+         ("C-c w 8" . wg-switch-to-workgroup-at-index-8)
+         ("C-c w 9" . wg-switch-to-workgroup-at-index-9)
+         ("C-c w <left> " . wg-switch-to-workgroup-left)
+         ("C-c w <right> " . wg-switch-to-workgroup-right))
   :config
   (progn
+    (setq wg-prefix-key (kbd "C-c w"))
+    (setq wg-session-file "~/.emacs.d/workgroups")
+    (setq wg-emacs-exit-save-behavior 'save)
+    (setq wg-workgroups-mode-exit-save-behavior 'save)
     (workgroups-mode 1)))
 
 ;;
@@ -71,6 +90,7 @@
 
 ;; default to 4 visible spaces to display a tab
 (setq-default tab-width 4)
+(setq tab-stop-list (number-sequence 4 120 4))
 
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -379,17 +399,13 @@
   :diminish company-mode
   :init (global-company-mode 1)
   :config
-  (progn
-    (setq company-backends (delete 'company-semantic company-backends))
-    ; (define-key c-mode-map  [(tab)] 'company-complete)
-    ; (define-key c++-mode-map  [(tab)] 'company-complete))
-  )
-  (use-package company-c-headers
-    :config
-    (add-to-list 'company-backends 'company-c-headers))
-
-
-  )
+    (use-package company-c-headers
+      :config
+        (use-package cc-mode
+          :config
+            (setq company-backends (delete 'company-semantic company-backends))
+            (define-key c-mode-map  [(tab)] 'company-complete)
+                (define-key c++-mode-map  [(tab)] 'company-complete))))
 
 ;;
 ;; EXPAND REGION
@@ -450,6 +466,7 @@
     :diminish helm-mode)
 
   (use-package helm-ag)
+  (use-package helm-swoop)
   
   (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
   (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
