@@ -45,3 +45,8 @@ export SAL_USE_VCLPLUGIN=gtk
 if [[ -r ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
     source ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
+# zsh autosuggestions
+if [[ -r ~/.dotfiles/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source ~/.dotfiles/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
