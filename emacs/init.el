@@ -183,6 +183,10 @@
         compilation-always-kill t
         compilation-scroll-output 'first-error))
 
+(add-hook 'html-mode-hook
+          (lambda ()
+            (set (make-local-variable 'sgml-basic-offset) 4)))
+
 ;;
 ;; MAKEFILES
 ;;
