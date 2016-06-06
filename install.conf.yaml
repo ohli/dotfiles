@@ -16,6 +16,8 @@
     '~/.toprc': 'toprc'
     '~/.Xdefaults': 'Xdefaults'
     '~/.xsessionrc': 'xinitrc'
+    '~/.config/user-dirs.conf': 'user-dirs.conf'
+    '~/.config/user-dirs.dirs': 'user-dirs.dirs'
     '~/.zshenv': 'zshenv'
     '~/.zprofile': 'zprofile'
     '~/.zshrc': 'zshrc'

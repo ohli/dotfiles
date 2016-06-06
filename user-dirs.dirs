@@ -1,0 +1,6 @@
+XDG_BUILD_DIR="$HOME/build"
+XDG_DOWNLOAD_DIR="$HOME/downloads"
+XDG_CODE_DIR="$HOME/code"
+XDG_DOCUMENTS_DIR="$HOME/documents"
+XDG_ORG_DIR="$HOME/org"
+XDG_TMP_DIR="$HOME/tmp"
