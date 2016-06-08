@@ -552,3 +552,13 @@
       ad-do-it
         (delete-other-windows))))
 
+;;
+;; ORG-MODE
+;;
+
+(use-package org
+  :mode (("\\.org$" . org-mode))
+  :config
+  (progn
+    (use-package org-bullets
+      :init (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))))
