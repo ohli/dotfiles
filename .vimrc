@@ -34,7 +34,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
+Plugin 'morhetz/gruvbox'
 Plugin 'nvie/vim-flake8'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -50,10 +53,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" load vim powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" Theme
+set background=dark
+colorscheme gruvbox
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -68,21 +70,13 @@ set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
 
-" Python PEP8 identation
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
-" Flagging unnecessary whitespace
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
 " UTF8-Support
 set encoding=utf-8
 
+" Disable vim-specific clipboard
+set clipboard=unnamed
+
+" Configure YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
@@ -90,6 +84,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 py << EOF
 import os
 import sys
+import vim
 if 'VIRTUAL_ENV' in os.environ:
 	project_base_dir = os.environ['VIRTUAL_ENV']
 	activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
@@ -100,6 +95,9 @@ let python_highlight_all=1
 syntax on
 " Set linenumbers
 set nu
+
+" Display airline buffers
+let g:airline#extensions#tabline#enabled = 1
 
 " Make syntastic fantastic
 set statusline+=%#warningmsg#
