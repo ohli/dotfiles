@@ -1,0 +1,85 @@
+# vim: set et fenc=utf-8 ft=conf sts=4 sw=4 ts=8 tw=80 :
+#
+# Author: microfracture / https://linuxious.com
+# Updated: 2015-06-18
+
+
+# =============================================================================
+# Initial setup
+# =============================================================================
+
+# Enable colors.
+zstyle ':prezto:*:*' color 'yes'
+
+# Activate my desired modules. (The order matters.)
+zstyle ':prezto:load' pmodule  \
+    'environment'              \
+    'terminal'                 \
+    'editor'                   \
+    'history'                  \
+    'directory'                \
+    'spectrum'                 \
+    'utility'                  \
+    'completion'               \
+    'archive'                  \
+    'pacman'                   \
+    'fasd'                     \
+    'syntax-highlighting'      \
+    'history-substring-search' \
+    'prompt'
+
+
+# =============================================================================
+# Module Configuration
+# =============================================================================
+
+# Enable coloring history substring searches.
+zstyle ':prezto:module:history-substring-search:color' found ''
+zstyle ':prezto:module:history-substring-search:color' not-found ''
+zstyle ':prezto:module:history-substring-search' globbing-flags ''
+
+# Set the keymapping to vi.
+zstyle ':prezto:module:editor' key-bindings 'vi'
+
+# Auto convert .... to ../..
+zstyle ':prezto:module:editor' dot-expansion 'yes'
+
+# Set the prompt theme.
+zstyle ':prezto:module:prompt' theme 'agnoster'
+
+# Set the enabled syntax highlighters.
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+    'main'                                               \
+    'brackets'                                           \
+    'pattern'                                            \
+    'cursor'                                             \
+    'root'
+
+# Set the syntax highlight styles.
+if [[ "$(tput colors)" == "256"  ]]; then
+    zstyle ':prezto:module:syntax-highlighting' styles \
+        'alias'                  'fg=26'               \
+        'builtin'                'fg=26'               \
+        'command'                'fg=26'               \
+        'commandseparator'       'fg=45'               \
+        'default'                'fg=45'               \
+        'double-hyphen-option'   'fg=39'               \
+        'double-quoted-argument' 'fg=45'               \
+        'function'               'fg=26'               \
+        'globbing'               'fg=39,bold'          \
+        'hashed-command'         'fg=26'               \
+        'history-expansion'      'fg=39'               \
+        'path'                   'fg=39'               \
+        'precommand'             'fg=36'               \
+        'reserved-word'          'fg=36'               \
+        'single-hyphen-option'   'fg=39'               \
+        'single-quoted-argument' 'fg=45'
+fi
+
+# Set the preferred Pacman frontend.
+zstyle ':prezto:module:pacman' frontend 'pacaur'
+
+# Enable setting tab and window titles.
+zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
