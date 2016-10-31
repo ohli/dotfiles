@@ -13,8 +13,8 @@ URxvt.secondaryScroll: true
 
 ! URxvt.font: xft:DejaVu Sans Mono for Powerline:pixelsize=10
 ! URxvt.font: xft:Droid Sans Mono for Powerline:pixelsize=10
-URxvt.font: xft:Meslo LG S for Powerline:pixelsize=11
-! URxvt.font: xft:Source Code Pro for Powerline:pixelsize=10
+! URxvt.font: xft:Meslo LG S for Powerline:pixelsize=11
+URxvt.font: xft:Source Code Pro for Powerline:pixelsize=10
 ! URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=12
 ! URxvt.font: xft:Literation Mono Powerline:pixelsize=10
 URxvt*inheritPixmap: true 

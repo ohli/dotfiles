@@ -7,6 +7,7 @@
 - link:
     '~/.dotfiles': ''
     '~/.aliases': 'aliases'
+    '~/.bashrc': 'bashrc'
     '~/.tmux.conf': 'tmux.conf'
     '~/.vimrc': 'vimrc'
     '~/.wallpaper': 'wallpaper'
@@ -20,6 +21,7 @@
     '~/.zshenv': 'zshenv'
     '~/.zprofile': 'zprofile'
     '~/.zshrc': 'zshrc'
+    '~/.zpreztorc': 'zpreztorc'
 
 - shell:
     - [git submodule update --init --recursive, installing submodules]
@@ -29,5 +31,6 @@
     - [mkdir -p ~/Music, creating Music directory]
     - [mkdir -p ~/Documents, creating Documents directory]
     - [mkdir -p ~/Downloads, creating Downloads directory]
+    - [mkdir -p ~/Pictures, creating Pictures directory]
     - [mkdir -p ~/Projects, creating Projects directory]
 
