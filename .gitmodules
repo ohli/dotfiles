@@ -7,22 +7,6 @@
 [submodule "vendor/nerd-fonts"]
 	path = vendor/nerd-fonts
 	url = git@github.com:ryanoasis/nerd-fonts.git
-[submodule "vendor/dwm"]
-	path = vendor/dwm
-	url = git@github.com:niko2342/dwm.git
-	branch = dotfiles
-[submodule "vendor/st"]
-	path = vendor/st
-	url = git@github.com:niko2342/st.git
-	branch = dotfiles
-[submodule "vendor/dmenu"]
-	path = vendor/dmenu
-	url = git@github.com:niko2342/dmenu.git
-	branch = dotfiles
-[submodule "vendor/dwmstatus"]
-	path = vendor/dwmstatus
-	url = git@github.com:niko2342/dwmstatus.git
-	branch = dotfiles
 [submodule "vendor/zsh-syntax-highlighting"]
 	path = vendor/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
