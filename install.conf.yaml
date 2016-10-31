@@ -9,11 +9,10 @@
     '~/.aliases': 'aliases'
     '~/.tmux.conf': 'tmux.conf'
     '~/.vimrc': 'vimrc'
-    '~/.emacs.d': 'emacs'
     '~/.wallpaper': 'wallpaper'
     '~/.xinitrc': 'xinitrc'
     '~/.inputrc': 'inputrc'
-    '~/.toprc': 'toprc'
+    '~/.config/htop/htoprc': 'htoprc'
     '~/.Xdefaults': 'Xdefaults'
     '~/.xsessionrc': 'xinitrc'
     '~/.config/user-dirs.conf': 'user-dirs.conf'
@@ -26,10 +25,9 @@
     - [git submodule update --init --recursive, installing submodules]
     - [vendor/powerline-fonts/install.sh, installing powerline fonts]
     - [vendor/nerd-fonts/install.sh, installing nerd fonts]
-    - [mkdir -p ~/build, creating build directory]
-    - [mkdir -p ~/code, creating code directory]
-    - [mkdir -p ~/documents, creating documents directory]
-    - [mkdir -p ~/downloads, creating downloads directory]
-    - [mkdir -p ~/org, creating org directory]
-    - [mkdir -p ~/tmp, creating tmp directory]
+    - [mkdir -p ~/Dev, creating Dev directory]
+    - [mkdir -p ~/Music, creating Music directory]
+    - [mkdir -p ~/Documents, creating Documents directory]
+    - [mkdir -p ~/Downloads, creating Downloads directory]
+    - [mkdir -p ~/Projects, creating Projects directory]
 
